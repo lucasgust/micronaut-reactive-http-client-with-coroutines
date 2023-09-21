@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: micronautguide
+  http:
+    services:
+      github:
+        url: https://api.github.com
+  codec:
+    json:
+      additional-types:
+        - application/vnd.github.v3+json
+
+endpoints:
+  health:
+    details-visible: ANONYMOUS
+    enabled: true
+    sensitive: false
+
+github:
+  organization: ${GITHUB_ORGANIZATION:`micronaut-projects`}
+  repo: ${GITHUB_REPO:`micronaut-core`}
+  username: ${GITHUB_USERNAME:`some-username`}
+  token: ${GITHUB_TOKEN:`some-token`}
